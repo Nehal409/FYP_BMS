@@ -11,6 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
+    "fuzzy": "^0.1.3",
+    "fuzzylite": "^0.5.2",
+    "fuzzylogic": "^0.3.5",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.1",
     "mqtt": "^5.0.0"
   },
   "devDependencies": {

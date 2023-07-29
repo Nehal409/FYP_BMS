@@ -1,4 +1,5 @@
 var mqtt = require("mqtt");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -32,3 +33,24 @@ client.subscribe("my/test/topic");
 
 // publish message 'Hello' to topic 'my/test/topic'
 client.publish("my/test/topic", "Hello");
+
+// MongoDB configs
+const db = process.env.MONGO_URI;
+const dbOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+
+// db connection
+const connect = () => {
+  mongoose
+    .connect(db, dbOptions)
+    .then(() => {
+      console.log('Database connection successful...');
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+// connect();
